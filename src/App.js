@@ -13,68 +13,62 @@ import RolesPermissions from "./pages/RolesPermissions/RolesPermissions";
 import Recruitment from "./pages/Recruitment/Recruitment";
 import Settings from "./pages/Settings/Settings";
 import ReportsAnalytics from "./pages/Reports/ReportsAnalytics";
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
+        {/* Login */}
         <Route path="/" element={<Login />} />
 
-        <Route
-          path="/dashboard"
-          element={<Dashboard />}
-        />
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
 
-        <Route
-          path="/employees"
-          element={<EmployeeManagement />}
-        />
+        {/* Employee Management */}
+        <Route path="/employees" element={<EmployeeManagement />} />
+        <Route path="/employees/add" element={<AddEmployee />} />
 
-        <Route
-          path="/add-employee"
-          element={<AddEmployee />}
-        />
+        {/* Attendance */}
+        <Route path="/attendance" element={<Attendance />} />
 
-        <Route
-          path="/attendance"
-          element={<Attendance />}
-        />
-<Route path="/reports" element={<ReportsAnalytics />} />
+        {/* Leave Management */}
         <Route
           path="/leave-management"
           element={<LeaveManagement />}
         />
 
+        {/* Biometric Sync */}
         <Route
           path="/biometric-sync"
           element={<BiometricSync />}
         />
 
+        {/* Documents */}
+        <Route path="/documents" element={<Documents />} />
+
+        {/* Payroll */}
+        <Route path="/payroll" element={<Payroll />} />
+
+        {/* Reports */}
         <Route
-          path="/documents"
-          element={<Documents />}
+          path="/reports"
+          element={<ReportsAnalytics />}
         />
 
-        <Route
-          path="/payroll"
-          element={<Payroll />}
-        />
-
+        {/* Roles & Permissions */}
         <Route
           path="/roles-permissions"
           element={<RolesPermissions />}
         />
 
+        {/* Recruitment */}
         <Route
           path="/recruitment"
           element={<Recruitment />}
         />
 
-        <Route
-          path="/settings"
-          element={<Settings />}
-        />
-
+        {/* Settings */}
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );
