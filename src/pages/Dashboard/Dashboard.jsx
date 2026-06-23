@@ -2,7 +2,7 @@ import "./Dashboard.css";
 
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "../../components/Header/Header";
-
+import { useNavigate } from "react-router-dom";
 import {
   FiUsers,
   FiCheckCircle,
@@ -69,6 +69,7 @@ const stats = [
 ];
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   return (
     <div className="dashboard-layout">
       <Sidebar />
@@ -138,31 +139,44 @@ export default function Dashboard() {
         <div className="bottom-row">
 
           {/* Quick Actions */}
-          <div className="widget">
-            <h3>Quick Actions</h3>
+{/* Quick Actions */}
+<div className="widget">
+  <h3>Quick Actions</h3>
 
-            <div className="quick-grid">
-              <div className="quick-card">
-                <FiUsers />
-                <span>Add Employee</span>
-              </div>
+  <div className="quick-grid">
+    <div
+      className="quick-card"
+      onClick={() => navigate("/employees/add")}
+    >
+      <FiUsers />
+      <span>Add Employee</span>
+    </div>
 
-              <div className="quick-card">
-                <FiDollarSign />
-                <span>Run Payroll</span>
-              </div>
+    <div
+      className="quick-card"
+      onClick={() => navigate("/payroll")}
+    >
+      <FiDollarSign />
+      <span>Run Payroll</span>
+    </div>
 
-              <div className="quick-card">
-                <FiCalendar />
-                <span>Approve Leave</span>
-              </div>
+    <div
+      className="quick-card"
+      onClick={() => navigate("/leave-management")}
+    >
+      <FiCalendar />
+      <span>Approve Leave</span>
+    </div>
 
-              <div className="quick-card">
-                <FiAlertCircle />
-                <span>Sync Biometric</span>
-              </div>
-            </div>
-          </div>
+    <div
+      className="quick-card"
+      onClick={() => navigate("/biometric-sync")}
+    >
+      <FiAlertCircle />
+      <span>Sync Biometric</span>
+    </div>
+  </div>
+</div>
 
           {/* Celebrations */}
           <div className="widget">
